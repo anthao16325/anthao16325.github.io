@@ -305,8 +305,6 @@
 					</div>
 				</div>
 			</div>
-
-			
 		</div>
 	</div>
 
@@ -322,7 +320,7 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline">
+					<form class="form-inline" id="form-attend">
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
@@ -336,17 +334,15 @@
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">I am Attending</button>
+							<button type="submit" class="btn btn-default btn-block" id="post-btn">I am Attending</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
-
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>“They say as long as at least one person cares for you, life isn’t a waste. So when things go terribly wrong, and you feel like giving up, please remember you still got me.”</p>
@@ -402,6 +398,26 @@
         day: d.getDate(),
         enableUtc: false
     });
+
+	document.getElementById("form-attend").addEventListener("submit", (e) => {
+		e.preventDefault();
+		const form = document.forms["form-attend"];
+		const name = form.name.value;
+		const email = form.email.value;
+
+		fetch('https://script.google.com/macros/s/AKfycbxvjQnE4-ddlF0hwFYlVOUQ3THGSa_Zrp1HXGT9YOmJEX8n1jdCnkLzLXea9Q7c0P8YoQ/exec',{
+            method:'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+				'type': 'attend'
+            },
+            body:JSON.stringify({
+				'name': name,
+				'email': email
+			})
+        }).then(res=>res.json()).then(json=>console.log(json))
+	});
 </script>
 
 	</body>
