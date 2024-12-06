@@ -1818,6 +1818,24 @@ form label {
   border-color: #F14E95;
 }
 
+.form-group select {
+  background: rgba(255, 255, 255, 0.2);
+  border: none !important;
+  color: #fff;
+  height: 54px;
+  font-size: 18px;
+  font-weight: 300;
+  width: 100%;
+  padding: 5%;
+}
+
+select option {
+  margin: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
 .row-pb-md {
   padding-bottom: 4em !important;
 }
@@ -1841,3 +1859,4 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+
