@@ -425,19 +425,18 @@
 			"attend": form.ynAttend ? form.ynAttend.value : ""
 		});
 
-		let headers = new Headers();
-		headers.append('Content-Type', 'application/json');
-		headers.append('Accept', 'application/json');
-		headers.append('Access-Control-Allow-Origin', '*');
 		await fetch(url, {
 			method: 'POST',
-			body: {
+			body: JSON.stringify({
 				"name": form.name ? form.name.value : "",
 				"email": form.email ? form.email.value : "",
 				"num": form.pplNum ? form.pplNum.value : "",
 				"attend": form.ynAttend ? form.ynAttend.value : ""
-			},
-			headers: headers
+			}),
+			headers: { 
+				'Content-Type': 'application/x-www-form-urlencoded',
+				'Access-Control-Allow-Origin': 'https://anthao16325.github.io'
+			}
 		}).then(res => {
 			console.log("completed!");
 			console.log(res.json());
