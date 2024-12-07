@@ -414,34 +414,50 @@
     });
 
 	const button = document.getElementById('post-btn');
-	button.addEventListener('click', async _ => {
-		try {
-			const name = document.getElementById('name').value ? document.getElementById('name').value : "";
-			const email = document.getElementById('email').value ? document.getElementById('email').value : "";
-			const num = document.getElementById('pplNum').value ? document.getElementById('pplNum').value : "";
-			const attend = document.getElementById('ynAttend').value ? document.getElementById('ynAttend').value : "";
-			console.log({
-					"name": name,
-					"email": email,
-					"num": num,
-					"attend": attend
-				});
 
-			const url = "https://script.google.com/macros/s/AKfycbxvjQnE4-ddlF0hwFYlVOUQ3THGSa_Zrp1HXGT9YOmJEX8n1jdCnkLzLXea9Q7c0P8YoQ/exec";
-			const response = await fetch(url, {
-				method: 'post',
-				body: {
-					"name": name,
-					"email": email,
-					"num": num,
-					"attend": attend
-				}
-			})
-			response.then((res) => console.log(res.json()));
+	button.addEventListener('click', async _ => {
+		try {     
+			const response = await fetch('https://script.google.com/macros/s/AKfycbxvjQnE4-ddlF0hwFYlVOUQ3THGSa_Zrp1HXGT9YOmJEX8n1jdCnkLzLXea9Q7c0P8YoQ/exec?type=attend', {
+			method: 'post',
+			body: {
+				"input": "sample via html"
+			}
+			});
+			console.log('Completed!', response);
 		} catch(err) {
 			console.error(`Error: ${err}`);
 		}
 	});
+
+	// const button = document.getElementById('post-btn');
+	// button.addEventListener('click', async _ => {
+	// 	try {
+	// 		const name = document.getElementById('name').value ? document.getElementById('name').value : "";
+	// 		const email = document.getElementById('email').value ? document.getElementById('email').value : "";
+	// 		const num = document.getElementById('pplNum').value ? document.getElementById('pplNum').value : "";
+	// 		const attend = document.getElementById('ynAttend').value ? document.getElementById('ynAttend').value : "";
+	// 		console.log({
+	// 				"name": name,
+	// 				"email": email,
+	// 				"num": num,
+	// 				"attend": attend
+	// 			});
+
+	// 		const url = "https://script.google.com/macros/s/AKfycbxvjQnE4-ddlF0hwFYlVOUQ3THGSa_Zrp1HXGT9YOmJEX8n1jdCnkLzLXea9Q7c0P8YoQ/exec";
+	// 		const response = await fetch(url, {
+	// 			method: 'post',
+	// 			body: {
+	// 				"name": name,
+	// 				"email": email,
+	// 				"num": num,
+	// 				"attend": attend
+	// 			}
+	// 		})
+	// 		response.then((res) => console.log(res.json()));
+	// 	} catch(err) {
+	// 		console.error(`Error: ${err}`);
+	// 	}
+	// });
 </script>
 
 	</body>
