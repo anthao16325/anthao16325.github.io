@@ -430,7 +430,7 @@
 		headers.append('Accept', 'application/json');
 		headers.append('Access-Control-Allow-Origin', '*');
 		await fetch(url, {
-			method: 'post',
+			method: 'POST',
 			body: {
 				"name": form.name ? form.name.value : "",
 				"email": form.email ? form.email.value : "",
