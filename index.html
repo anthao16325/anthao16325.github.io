@@ -417,7 +417,7 @@
 	form.addEventListener('submit', handleSubmit);
 	async function handleSubmit(e){
 		e.preventDefault();
-		const url = "https://script.google.com/macros/s/AKfycbxvjQnE4-ddlF0hwFYlVOUQ3THGSa_Zrp1HXGT9YOmJEX8n1jdCnkLzLXea9Q7c0P8YoQ/exec?type=attend";
+		const url = "https://script.google.com/macros/s/AKfycbxvjQnE4-ddlF0hwFYlVOUQ3THGSa_Zrp1HXGT9YOmJEX8n1jdCnkLzLXea9Q7c0P8YoQ/exec";
 		console.log({
 			"name": form.name ? form.name.value : "",
 			"email": form.email ? form.email.value : "",
@@ -425,6 +425,10 @@
 			"attend": form.ynAttend ? form.ynAttend.value : ""
 		});
 
+		let headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+		headers.append('Accept', 'application/json');
+		headers.append('Access-Control-Allow-Origin', '*');
 		await fetch(url, {
 			method: 'post',
 			body: {
@@ -432,7 +436,8 @@
 				"email": form.email ? form.email.value : "",
 				"num": form.pplNum ? form.pplNum.value : "",
 				"attend": form.ynAttend ? form.ynAttend.value : ""
-			}
+			},
+			headers: headers
 		}).then(res => {
 			console.log("completed!");
 			console.log(res.json());
