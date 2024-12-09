@@ -2312,7 +2312,7 @@ content: '';
     padding: 30px 30px 40px 80px;
     border: none;
     border-radius: 0 20px 20px 0;
-    font: 22px 'Shadows Into Light', cursive;
+    font: 22px 'Shadows Into Light';
     background: #fff linear-gradient(rgba(0,0,0,.1) 1px, transparent 0) 0 20px / 100% 40px;
     
     &:after {
