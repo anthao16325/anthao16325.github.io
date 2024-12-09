@@ -313,13 +313,13 @@
 					<form class="form__contact" id="mess-form">
 						<fieldset>
 						  <p>Hey, buddy!</p>
-						  <p>((((･ิ(･ิω(･ิω･ิ)ω･ิ)･ิ))))</p>
+						  <p style="font-size:14px">(･ิ(･ิω(･ิω･ิ)ω･ิ)･ิ)</p>
 						  <p>This is our special day, please send your wish to cheer up our time (❁˃́ᴗ˂̀)(≧ᴗ≦✿): <span class="form__field field--message" data-placeholder="your message" tabindex="1" contenteditable id="your_message"></span></p>
 						  <p>Leave your name here: <span class="form__field field--name" data-placeholder="your name" tabindex="2" contenteditable id="your_name"></span>,  let us pin your message to our cheer up dashboard! </p>
-						  <p style="font-size:15px">ヽ(＾▽＾)人(＾▽＾)人(＾▽＾)ﾉ</p> 
+						  <p style="font-size:14px">ヽ(＾▽＾)人(＾▽＾)人(＾▽＾)ﾉ</p> 
 						  <p>Thanks you and have a blast!</p>
-						  <p style="font-size:12px">*Note: In case you can not attend our wedding, you can share your super best "wish" with the bank's QR included, optional but recommended (˵ •̀ᴗ•́˵)و</p>
-						  <p style="font-size:12px">~All your best sweet heart~ (  •̀ω  •́  )</p> 
+						  <p style="font-size:15px">*Note: In case you can not attend our wedding, you can share your super best "wish" with the bank's QR, optional but recommended (˵ •̀ᴗ•́˵)و</p>
+						  <p style="font-size:15px">~ All your best~ (  •̀ω  •́  )</p> 
 						  <button type="submit" class="button button--xlarge" tabindex="3">Send message &#187;</button>
 						</fieldset>
 					  </form>
@@ -458,22 +458,26 @@
 	async function handleSendMess(e){
 		e.preventDefault();
 		const url = "https://script.google.com/macros/s/AKfycbxvjQnE4-ddlF0hwFYlVOUQ3THGSa_Zrp1HXGT9YOmJEX8n1jdCnkLzLXea9Q7c0P8YoQ/exec?type=wish";
-		await fetch(url, {
-			method: 'POST',
-			body: JSON.stringify({
-				"mess": $('#your_message').text(),
-				"name": $('#your_name').text()
-			}),
-			headers: { 
-				"Access-Control-Allow-Origin": "*",
-				"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-				"Access-Control-Allow-Headers": "Content-Type, Authorization"
-			},
-			mode: "no-cors"
-		}).then(res => {
-			console.log("completed!");
-			location.reload();
-		})
+		if($('#your_message').text()){
+			await fetch(url, {
+				method: 'POST',
+				body: JSON.stringify({
+					"mess": $('#your_message').text(),
+					"name": $('#your_name').text()
+				}),
+				headers: { 
+					"Access-Control-Allow-Origin": "*",
+					"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+					"Access-Control-Allow-Headers": "Content-Type, Authorization"
+				},
+				mode: "no-cors"
+			}).then(res => {
+				console.log("completed!");
+				location.reload();
+			})
+		}else{
+			alert("no name - no comment!")
+		}
 	}
 	////////////////////////
 	const countdown = new Date(2025, 3, 16, 12, 0, 0, 0);
