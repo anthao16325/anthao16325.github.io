@@ -2328,7 +2328,7 @@ content: '';
   
 	p {
     margin: 0 0 40px 0;
-    line-height: 40px;
+    /* line-height: 40px; */
     color: #333;
 	}
 
@@ -2338,7 +2338,7 @@ content: '';
 	}
 
 	button {
-		margin-top: 40px;
+		/* margin-top: 40px; */
     float: right;
     border: none;
     font-family: 'Shadows Into Light';
