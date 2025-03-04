@@ -2630,8 +2630,8 @@ ul li section{
  padding: 0 20px 0 0px;
 }
 .detailsText{
- height:138px;
- overflow: hidden;
+ /* height:138px; */
+ overflow: auto;
 }
 /*.detailsText:hover {*/
  /*overflow: auto;*/
