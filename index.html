@@ -156,9 +156,10 @@
 						<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 							<span>Our Special Events</span>
 							<h2>Wedding Events</h2>
+							<iframe width="700" height="500" src="https://www.youtube.com/embed/cBY8EJvZt6Q?si=Lc7Y-bb0nfnbnyol" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 						</div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="display-t">
 							<div class="display-tc">
 								<div class="col-md-10 col-md-offset-1">
@@ -196,7 +197,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 
@@ -565,33 +566,33 @@
 		});
 
 		
-		const form = document.getElementById('attend-form');
-		form.addEventListener('submit', (e) => handleSubmit(e), {once : true});
-		async function handleSubmit(e) {
-			e.preventDefault();
-			const url = "https://script.google.com/macros/s/AKfycbxvjQnE4-ddlF0hwFYlVOUQ3THGSa_Zrp1HXGT9YOmJEX8n1jdCnkLzLXea9Q7c0P8YoQ/exec?type=attend";
-			if (form.name) {
-				await fetch(url, {
-					method: 'POST',
-					body: JSON.stringify({
-						"name": form.name ? form.name.value : "",
-						"email": form.email ? form.email.value : "",
-						"num": form.pplNum ? form.pplNum.value : "",
-						"attend": form.ynAttend ? form.ynAttend.value : ""
-					}),
-					headers: {
-						"Access-Control-Allow-Origin": "*",
-						"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-						"Access-Control-Allow-Headers": "Content-Type, Authorization"
-					},
-					mode: "no-cors"
-				}).then(res => {
-					console.log("completed!");
-					location.reload();
-					// location.replace(location.href);
-				})
-			}
-		}
+		// const form = document.getElementById('attend-form');
+		// form.addEventListener('submit', (e) => handleSubmit(e), {once : true});
+		// async function handleSubmit(e) {
+		// 	e.preventDefault();
+		// 	const url = "https://script.google.com/macros/s/AKfycbxvjQnE4-ddlF0hwFYlVOUQ3THGSa_Zrp1HXGT9YOmJEX8n1jdCnkLzLXea9Q7c0P8YoQ/exec?type=attend";
+		// 	if (form.name) {
+		// 		await fetch(url, {
+		// 			method: 'POST',
+		// 			body: JSON.stringify({
+		// 				"name": form.name ? form.name.value : "",
+		// 				"email": form.email ? form.email.value : "",
+		// 				"num": form.pplNum ? form.pplNum.value : "",
+		// 				"attend": form.ynAttend ? form.ynAttend.value : ""
+		// 			}),
+		// 			headers: {
+		// 				"Access-Control-Allow-Origin": "*",
+		// 				"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+		// 				"Access-Control-Allow-Headers": "Content-Type, Authorization"
+		// 			},
+		// 			mode: "no-cors"
+		// 		}).then(res => {
+		// 			console.log("completed!");
+		// 			location.reload();
+		// 			// location.replace(location.href);
+		// 		})
+		// 	}
+		// }
 		////////////////////////
 		const sendMess = document.getElementById('mess-form');
 		sendMess.addEventListener('submit', (e) => handleSendMess(e), {once : true});
