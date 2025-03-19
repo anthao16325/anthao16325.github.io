@@ -73,8 +73,8 @@
 						<div class="display-t">
 							<div class="display-tc animate-box" data-animate-effect="fadeIn">
 								<h1>An &amp; Thao</h1>
-								<h2>We Are Getting Married</h2>
-								<div class='cards'>
+								<h2>We Are Married</h2>
+								<!-- <div class='cards'>
 									<div class='card days'>
 										<div class='flip-card'>
 											<div class='top-half'>00</div>
@@ -104,7 +104,7 @@
 										</div>
 										<p>Seconds</p>
 									</div>
-								</div>
+								</div> -->
 								<!-- <p><a href="#fh5co-couple" class="btn btn-default btn-sm">Save the date</a></p> -->
 								<p><button class="heart-btn" onclick="showContent()">SPREAD LOVE</button></p>
 							</div>
@@ -413,7 +413,7 @@
 				<ul id="sticky-note" class="stickyNote"></ul>
 			</div>
 
-			<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/HD__3813.jpg);">
+			<!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/HD__3813.jpg);">
 				<div class="overlay"></div>
 				<div class="container">
 					<div class="row animate-box">
@@ -451,15 +451,15 @@
 								</div>
 								<div class="col-md-4 col-sm-4">
 									<button type="submit" class="glow-on-hover">Submit</button>
-									<!-- <div class="wrap">
+									<div class="wrap">
 									<button type="submit" class="button">Submit</button>glow-on-hover
-								</div> -->
+								</div>
 								</div>
 							</form>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<footer id="fh5co-footer" role="contentinfo">
 				<div class="container">
 					<div class="row copyright">
@@ -620,88 +620,88 @@
 			}
 		}
 		////////////////////////
-		const countdown = new Date(2025, 2, 16, 12, 0, 0, 0);
+		// const countdown = new Date(2025, 2, 16, 12, 0, 0, 0);
 
-		const days = document.querySelector(".days").querySelector(".flip-card");
-		const hours = document.querySelector(".hours").querySelector(".flip-card");
-		const minutes = document.querySelector(".minutes").querySelector(".flip-card");
-		const seconds = document.querySelector(".seconds").querySelector(".flip-card");
+		// const days = document.querySelector(".days").querySelector(".flip-card");
+		// const hours = document.querySelector(".hours").querySelector(".flip-card");
+		// const minutes = document.querySelector(".minutes").querySelector(".flip-card");
+		// const seconds = document.querySelector(".seconds").querySelector(".flip-card");
 
-		// ** get the time totals, return them
-		function getTimeRemaining(countdown) {
-			const now = new Date();
-			const diff = countdown - now;
+		// // ** get the time totals, return them
+		// function getTimeRemaining(countdown) {
+		// 	const now = new Date();
+		// 	const diff = countdown - now;
 
-			const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-			const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-			const minutes = Math.floor((diff / 1000 / 60) % 60);
-			const seconds = Math.floor((diff / 1000) % 60);
+		// 	const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+		// 	const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+		// 	const minutes = Math.floor((diff / 1000 / 60) % 60);
+		// 	const seconds = Math.floor((diff / 1000) % 60);
 
-			return {
-				diff,
-				days,
-				hours,
-				minutes,
-				seconds
-			};
-		}
+		// 	return {
+		// 		diff,
+		// 		days,
+		// 		hours,
+		// 		minutes,
+		// 		seconds
+		// 	};
+		// }
 
-		function initializeClock(countdown) {
-			function updateClock() {
-				const t = getTimeRemaining(countdown);
-				addFlip(days, t.days);
-				addFlip(hours, t.hours);
-				addFlip(minutes, t.minutes);
-				addFlip(seconds, t.seconds);
+		// function initializeClock(countdown) {
+		// 	function updateClock() {
+		// 		const t = getTimeRemaining(countdown);
+		// 		addFlip(days, t.days);
+		// 		addFlip(hours, t.hours);
+		// 		addFlip(minutes, t.minutes);
+		// 		addFlip(seconds, t.seconds);
 
-				if (t.diff <= 0) {
-					clearInterval(timeinterval);
-				}
-			}
+		// 		if (t.diff <= 0) {
+		// 			clearInterval(timeinterval);
+		// 		}
+		// 	}
 
-			updateClock();
-			const timeinterval = setInterval(updateClock, 1000);
-		}
+		// 	updateClock();
+		// 	const timeinterval = setInterval(updateClock, 1000);
+		// }
 
-		const addFlip = (card, time) => {
-			// ** confirm time has changed
-			const currTime = card.querySelector(".top-half").innerText;
-			if (time == currTime) return;
+		// const addFlip = (card, time) => {
+		// 	// ** confirm time has changed
+		// 	const currTime = card.querySelector(".top-half").innerText;
+		// 	if (time == currTime) return;
 
-			let t = time <= 9 ? `0${time}` : time;
-			const topHalf = card.querySelector(".top-half");
-			const bottomHalf = card.querySelector(".bottom-half");
-			const topFlip = document.createElement("div");
-			const bottomFlip = document.createElement("div");
+		// 	let t = time <= 9 ? `0${time}` : time;
+		// 	const topHalf = card.querySelector(".top-half");
+		// 	const bottomHalf = card.querySelector(".bottom-half");
+		// 	const topFlip = document.createElement("div");
+		// 	const bottomFlip = document.createElement("div");
 
-			// ** add animation, populate with current time
-			topFlip.classList.add("top-flip");
-			topFlip.innerText = currTime;
+		// 	// ** add animation, populate with current time
+		// 	topFlip.classList.add("top-flip");
+		// 	topFlip.innerText = currTime;
 
-			bottomFlip.classList.add("bottom-flip");
+		// 	bottomFlip.classList.add("bottom-flip");
 
-			// ** animation begins, update top-half to new time
-			topFlip.addEventListener("animationstart", () => {
-				topHalf.innerText = t;
-			});
+		// 	// ** animation begins, update top-half to new time
+		// 	topFlip.addEventListener("animationstart", () => {
+		// 		topHalf.innerText = t;
+		// 	});
 
-			// ** animation ends, remove animated div, update bottom animation to new time
-			topFlip.addEventListener("animationend", () => {
-				topFlip.remove();
-				bottomFlip.innerText = t;
-			});
+		// 	// ** animation ends, remove animated div, update bottom animation to new time
+		// 	topFlip.addEventListener("animationend", () => {
+		// 		topFlip.remove();
+		// 		bottomFlip.innerText = t;
+		// 	});
 
-			// ** animation ends, update bottom-half to new time, remove animated div
-			bottomFlip.addEventListener("animationend", () => {
-				bottomHalf.innerText = t;
-				bottomFlip.remove();
-			});
+		// 	// ** animation ends, update bottom-half to new time, remove animated div
+		// 	bottomFlip.addEventListener("animationend", () => {
+		// 		bottomHalf.innerText = t;
+		// 		bottomFlip.remove();
+		// 	});
 
-			card.appendChild(topFlip);
-			card.appendChild(bottomFlip);
-		};
+		// 	card.appendChild(topFlip);
+		// 	card.appendChild(bottomFlip);
+		// };
 
-		initializeClock(countdown);
+		// initializeClock(countdown);
 
 		///////////////////////////////////////////////////////
 		$(document).ready(function () {
