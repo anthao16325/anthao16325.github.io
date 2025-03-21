@@ -472,9 +472,9 @@
 
 				</div>
 			</footer>
-			<audio id='music' autoplay>
+			<!-- <audio id='music' autoplay>
 				<source src="" type="audio/mpeg">
-			</audio>
+			</audio> -->
 
 		</section>
 	</div>
@@ -509,61 +509,61 @@
 	<script src="js/main.js"></script>
 
 	<script>
-		function playmusic() {
-			fileArray = [
-				"music/at my worst.mp3",
-				"music/Bật Tình Yêu Lên.mp3",
-				"music/Chăm Em Một Đời (1).mp3",
-				"music/Chăm Hoa (1).mp3",
-				"music/Cùng Anh (VRT Mix).mp3",
-				"music/Cưới Hông Chốt Nha.mp3",
-				"music/Die With A Smile.mp3",
-				"music/Gặp người đúng lúc (Remix) - 剛好遇見你 - KiKi.mp3",
-				"music/Hơn Cả Yêu.mp3",
-				"music/Học Mèo Kêu - 學貓叫.mp3",
-				"music/Love Me Like You Do.mp3",
-				"music/Lucky.mp3",
-				"music/Là Anh - 是你.mp3",
-				"music/Mặt Mộc.mp3",
-				"music/Night Changes.mp3",
-				"music/Nơi Này Có Anh.mp3",
-				"music/One Call Away.mp3",
-				"music/Perfect.mp3",
-				"music/Photograph.mp3",
-				"music/Say You Won_t Let Go.mp3",
-				"music/Shallow.mp3",
-				"music/Thích Quá Rùi Nà.mp3",
-				"music/Tràn Bộ Nhớ.mp3",
-				"music/Tết Này Có Nhau (New Version).mp3",
-				"music/Xin Má Rước Dâu (EDM Version) (1).mp3",
-				"music/Yêu 5.mp3",
-				"music/Yêu Em Hơn Mỗi Ngày.mp3",
-				"music/Yêu Là Cưới.mp3",
-				"music/Ý Em Sao.mp3",
-				"music/Đám Cưới Nha-.mp3"
-			];
-			var num = Math.floor(Math.random() * fileArray.length);
-			var x = document.getElementById("music");
-			x.src = fileArray[num]; 
+		// function playmusic() {
+		// 	fileArray = [
+		// 		"music/at my worst.mp3",
+		// 		"music/Bật Tình Yêu Lên.mp3",
+		// 		"music/Chăm Em Một Đời (1).mp3",
+		// 		"music/Chăm Hoa (1).mp3",
+		// 		"music/Cùng Anh (VRT Mix).mp3",
+		// 		"music/Cưới Hông Chốt Nha.mp3",
+		// 		"music/Die With A Smile.mp3",
+		// 		"music/Gặp người đúng lúc (Remix) - 剛好遇見你 - KiKi.mp3",
+		// 		"music/Hơn Cả Yêu.mp3",
+		// 		"music/Học Mèo Kêu - 學貓叫.mp3",
+		// 		"music/Love Me Like You Do.mp3",
+		// 		"music/Lucky.mp3",
+		// 		"music/Là Anh - 是你.mp3",
+		// 		"music/Mặt Mộc.mp3",
+		// 		"music/Night Changes.mp3",
+		// 		"music/Nơi Này Có Anh.mp3",
+		// 		"music/One Call Away.mp3",
+		// 		"music/Perfect.mp3",
+		// 		"music/Photograph.mp3",
+		// 		"music/Say You Won_t Let Go.mp3",
+		// 		"music/Shallow.mp3",
+		// 		"music/Thích Quá Rùi Nà.mp3",
+		// 		"music/Tràn Bộ Nhớ.mp3",
+		// 		"music/Tết Này Có Nhau (New Version).mp3",
+		// 		"music/Xin Má Rước Dâu (EDM Version) (1).mp3",
+		// 		"music/Yêu 5.mp3",
+		// 		"music/Yêu Em Hơn Mỗi Ngày.mp3",
+		// 		"music/Yêu Là Cưới.mp3",
+		// 		"music/Ý Em Sao.mp3",
+		// 		"music/Đám Cưới Nha-.mp3"
+		// 	];
+		// 	var num = Math.floor(Math.random() * fileArray.length);
+		// 	var x = document.getElementById("music");
+		// 	x.src = fileArray[num]; 
 
-			var audio = document.getElementById("music");
-			audio.volume = 0.2;
-			audio.autoplay = true;
-			audio.load();
-		}
-		playmusic();
-		let isPlaying = false;
-		window.addEventListener('scroll', (e) => {
-			e.preventDefault();
-			if (!isPlaying && window.scrollY > 300) {
-				playmusic();
-				isPlaying = true;
-			}
-		});
+		// 	var audio = document.getElementById("music");
+		// 	audio.volume = 0.2;
+		// 	audio.autoplay = true;
+		// 	audio.load();
+		// }
+		// playmusic();
+		// let isPlaying = false;
+		// window.addEventListener('scroll', (e) => {
+		// 	e.preventDefault();
+		// 	if (!isPlaying && window.scrollY > 300) {
+		// 		playmusic();
+		// 		isPlaying = true;
+		// 	}
+		// });
 
-		document.getElementById("music").addEventListener('ended', () => {
-    		playmusic();
-		});
+		// document.getElementById("music").addEventListener('ended', () => {
+    	// 	playmusic();
+		// });
 
 		
 		// const form = document.getElementById('attend-form');
